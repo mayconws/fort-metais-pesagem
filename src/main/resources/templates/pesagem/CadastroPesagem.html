@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:data="http://www.thymeleaf.org/extras/data" 
+    layout:decorate="layout/LayoutPadrao">
+
+<head>
+
+    <title>Cadastro de Pesagem</title>
+
+    <!-- Switch Button -->
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap4-toggle.min.css}" />
+
+</head>
+
+<body>
+
+    <div layout:fragment="conteudo">
+
+        <th:block th:include="/layout/fragments/MensagemSucesso"></th:block>
+
+        <!-- Page Heading -->
+        <div class="col-sm-12 text-center mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Cadastro de Pesagem</h1>
+        </div>
+
+        <form method="post">
+
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label font-weight-bold">Cliente</label>
+                    <input type="text" class="form-control" placeholder="Digite o nome do cliente" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label font-weight-bold">Transportadora</label>
+                    <input type="text" class="form-control" placeholder="Informe o nome da transportadora" />
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label class="control-label font-weight-bold">Data</label>
+                    <input type="date" class="form-control" />
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label class="control-label font-weight-bold">Tipo</label>
+                    <select class="form-control">
+                        <option value="">Selecione...</option>
+                        <option value="">Entrada</option>
+                        <option value="">Saída</option>
+                        <option value="">Devolução</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label class="control-label font-weight-bold">Observação</label>
+                    <textarea type="text" class="form-control" placeholder="Infome a observação"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center mb-3">
+            	<!-- Botão de Pesagem do Modal-->
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalPesagem">
+                    <i class="fa fa-spinner"></i> Pesar
+                </button>
+                <button type="submit" class="btn btn-success btn-sm">
+                    <i class="fas fa-check-circle"></i> Concluir
+                </button>
+                <a type="button" href="javascript:history.back()" class="btn btn-secondary btn-sm text-white">
+                    <i class="fa fa-undo"></i> Cancelar
+                </a>
+            </div>
+
+            <!-- Modal de Pesagem de Produto-->
+            <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalPesagem">
+                <div class="modal-dialog modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-weight-bold">Pesagem de Produto:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <p class="text-left font-weight-bold">
+                                <label class="text-left">Teste</label>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Modal de Pesagem de Produto -->
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Itens da Pesagem</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead class="bg-info">
+                                <tr>
+                                    <th class="text-center text-white">Produto</th>
+                                    <th class="text-center text-white">Origem</th>
+                                    <th class="text-center text-white">Peso Bruto</th>
+                                    <th class="text-center text-white">Perda</th>
+                                    <th class="text-center text-white">Peso Líquido</th>
+                                    <th class="text-center text-white">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">01 Sucata</td>
+                                    <td class="text-center">Padrão</td>
+                                    <td class="text-center">282,00</td>
+                                    <td class="text-center">20%</td>
+                                    <td class="text-center">239,70</td>
+                                    <td class="text-center">
+                                        <a type="button" class="btn btn-primary btn-circle btn-sm text-white"
+                                            title="editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+
+                                        <a type="button" class="btn btn-secondary btn-circle btn-sm text-white"
+                                            title="excluir">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <th:block layout:fragment="javascript-extra">
+
+    </th:block>
+
+</body>
+
+</html>
