@@ -2,7 +2,7 @@
 <html lang="pt-br" 
     xmlns:th="http://www.thymeleaf.org" 
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    xmlns:data="http://www.thymeleaf.org/extras/data" 
+    xmlns:data="http://www.thymeleaf.org/extras/data"
     layout:decorate="layout/LayoutPadrao">
 
 <head>
@@ -30,21 +30,21 @@
             <div class="col-sm-10 offset-sm-1">
                 <div class="row">
                     <div class="col-sm-4 form-group">
-                        <label class="control-label font-weight-bold">Produto</label> <input type="text"
-                            class="form-control" placeholder="Digite o nome do produto" />
+                        <label class="control-label font-weight-bold">Produto</label>
+                        <input type="text" class="form-control" placeholder="Digite o nome do produto" />
                     </div>
                     <div class="col-sm-4 form-group">
-                        <label class="control-label font-weight-bold">Peso</label> <input type="text"
-                            class="form-control" placeholder="Informe o peso" />
+                        <label class="control-label font-weight-bold">Peso</label>
+                        <input type="text" class="form-control" placeholder="Informe o peso" />
                     </div>
                     <div class="col-sm-4 form-group">
-                        <label class="control-label font-weight-bold">Tara</label> <input type="text"
-                            class="form-control" placeholder="Informe a tara" />
+                        <label class="control-label font-weight-bold">Tara</label>
+                        <input type="text" class="form-control" placeholder="Informe a tara" />
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-12 text-center mb-3">
+            <div class="col-sm-12 text-center mb-2">
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-arrow-down"></i> Adicionar
                 </button>
@@ -77,12 +77,40 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Peso
-                                    Líquido</div>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Peso Líquido
+                                </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">85.00</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa fa-cog fa-2x text-gray-300"></i>
+                                <i class="fa fa-cog fa-2x text-gray-300 text-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row no-gutters">
+                            <div class="col-sm-1">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Número</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Produto</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Lingote</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Peso</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">200.00</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tara</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">30</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Peso Líquido
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">170.00</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-cog fa-2x text-gray-300 text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -90,30 +118,30 @@
             </div>
 
             <div class="col-sm-10 offset-sm-1 mt-2">
-                <div class="card border-bottom-secondary h-100">
+                <div class="card border-bottom-success h-100">
                     <div class="card-body">
                         <div class="row no-gutters">
                             <div class="col-sm-1">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-                                <div class="h5 mb-0 font-weight-bold text-secondary">Total</div>
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-success">Total</div>
                             </div>
                             <div class="col-sm-3">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-                                <div class="h5 mb-0 font-weight-bold text-secondary"></div>
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-success"></div>
                             </div>
                             <div class="col-sm-3">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-                                <div class="h5 mb-0 font-weight-bold text-secondary">100.00</div>
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-success">300.00</div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-                                <div class="h5 mb-0 font-weight-bold text-secondary">15</div>
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-success">45</div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-                                <div class="h5 mb-0 font-weight-bold text-secondary">85.00</div>
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-success">255.00</div>
                             </div>
-							 <div class="col-auto">
+                            <div class="col-auto">
                                 <i class="fa fa-list-ol fa-2x text-gray-300"></i>
                             </div>
                         </div>
@@ -127,13 +155,72 @@
                 <button type="submit" class="btn btn-success btn-sm">
                     <i class="fa fa-check"></i> Salvar
                 </button>
-                <button type="submit" class="btn btn-warning btn-sm">
+                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal"
+                    data-whatever="@mdo">
                     <i class="fa fa-random"></i> Transformar
                 </button>
                 <button type="submit" class="btn btn-secondary btn-sm">
                     <i class="fa fa-undo"></i> Cancelar
                 </button>
             </div>
+
+            <!-- Modal de Transformação de Material -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Transformação de Material
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label class="control-label font-weight-bold text-primary">Produto principal</label>
+                                        <input type="text" class="form-control" value="Lingote" />
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label class="control-label font-weight-bold text-primary">Peso Líquido</label>
+                                        <input type="text" class="form-control" value="255.00" />
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label class="control-label font-weight-bold text-primary">Perda</label>
+                                        <input type="text" class="form-control" value="6 %" />
+                                    </div>
+                                </div>                                
+
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label class="control-label font-weight-bold text-success">Transferir produto para</label>
+                                        <input type="text" class="form-control" value="Sucata" />
+                                    </div>
+                                      <div class="col-sm-3 form-group">
+                                        <label class="control-label font-weight-bold text-success">Perda</label>
+                                        <input type="text" class="form-control" value="15 %" />
+                                    </div>
+                                </div>                               
+
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label class="control-label font-weight-bold text-dark">Total</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Salvar</button>
+                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Modal de Transformação de Material -->
 
         </form>
 
