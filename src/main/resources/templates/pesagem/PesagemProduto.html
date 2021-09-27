@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:data="http://www.thymeleaf.org/extras/data" 
+    layout:decorate="layout/LayoutPadrao">
+
+<head>
+
+    <title>Cadastro de Pesagem</title>
+
+    <!-- Switch Button -->
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap4-toggle.min.css}" />
+
+</head>
+
+<body>
+
+    <div layout:fragment="conteudo">
+
+        <th:block th:include="/layout/fragments/MensagemSucesso"></th:block>
+
+        <!-- Page Heading -->
+        <div class="col-sm-12 text-center mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Pesagem de Produto</h1>
+        </div>
+
+        <form method="post">
+
+            <div class="col-sm-10 offset-sm-1">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label class="control-label font-weight-bold">Produto</label> <input type="text"
+                            class="form-control" placeholder="Digite o nome do produto" />
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label class="control-label font-weight-bold">Peso</label> <input type="text"
+                            class="form-control" placeholder="Informe o peso" />
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label class="control-label font-weight-bold">Tara</label> <input type="text"
+                            class="form-control" placeholder="Informe a tara" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center mb-3">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-arrow-down"></i> Adicionar
+                </button>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1">
+                    <h6 class="m-2 font-weight-bold text-primary">Dados da Pesagem</h6>
+                </div>
+            </div>
+
+            <div class="col-sm-10 offset-sm-1">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters">
+                            <div class="col-sm-1">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Número</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Produto</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Lingote</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Peso</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">100.00</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tara</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Peso
+                                    Líquido</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">85.00</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-cog fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 offset-sm-1 mt-2">
+                <div class="card border-bottom-secondary h-100">
+                    <div class="card-body">
+                        <div class="row no-gutters">
+                            <div class="col-sm-1">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-secondary">Total</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-secondary"></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-secondary">100.00</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-secondary">15</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                                <div class="h5 mb-0 font-weight-bold text-secondary">85.00</div>
+                            </div>
+							 <div class="col-auto">
+                                <i class="fa fa-list-ol fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 text-center mt-3">
+                <button type="submit" class="btn btn-success btn-sm">
+                    <i class="fa fa-check"></i> Salvar
+                </button>
+                <button type="submit" class="btn btn-warning btn-sm">
+                    <i class="fa fa-random"></i> Transformar
+                </button>
+                <button type="submit" class="btn btn-secondary btn-sm">
+                    <i class="fa fa-undo"></i> Cancelar
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <th:block layout:fragment="javascript-extra">
+
+    </th:block>
+
+</body>
+
+</html>

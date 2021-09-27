@@ -58,39 +58,17 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 text-center mb-3">
-            	<!-- Botão de Pesagem do Modal-->
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalPesagem">
+            <div class="col-sm-12 text-center mb-3">            	
+                <a type="button" class="btn btn-primary btn-sm text-white" th:href="@{/pesagens/produtos/novo}" >
                     <i class="fa fa-spinner"></i> Pesar
-                </button>
+                </a>
                 <button type="submit" class="btn btn-success btn-sm">
                     <i class="fas fa-check-circle"></i> Concluir
                 </button>
                 <a type="button" href="javascript:history.back()" class="btn btn-secondary btn-sm text-white">
                     <i class="fa fa-undo"></i> Cancelar
                 </a>
-            </div>
-
-            <!-- Modal de Pesagem de Produto-->
-            <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalPesagem">
-                <div class="modal-dialog modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold">Pesagem de Produto:</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="row">
-                            <p class="text-left font-weight-bold">
-                                <label class="text-left">Teste</label>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fim do Modal de Pesagem de Produto -->
+            </div>          
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
@@ -115,7 +93,7 @@
                                     <td class="text-center">01 Sucata</td>
                                     <td class="text-center">Padrão</td>
                                     <td class="text-center">282,00</td>
-                                    <td class="text-center">20%</td>
+                                    <td class="text-center">20 %</td>
                                     <td class="text-center">239,70</td>
                                     <td class="text-center">
                                         <a type="button" class="btn btn-primary btn-circle btn-sm text-white"
