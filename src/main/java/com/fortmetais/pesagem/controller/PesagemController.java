@@ -38,13 +38,13 @@ public class PesagemController {
 
 	}
 	
-	@PostMapping("/novo")
+	@PostMapping("/nova")
 	public ModelAndView salvar(@Validated Pesagem pesagem, BindingResult result, RedirectAttributes attributes) {
 		
 		pesagemService.salvar(pesagem);
 		
 		attributes.addFlashAttribute("mensagem", "Pesagem salva com Sucesso!");
-		return new ModelAndView("redirect:/pesagens");
+		return new ModelAndView("redirect:/pesagens/nova");
 	}
 
 }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:data="http://www.thymeleaf.org/extras/data" 
+    layout:decorate="layout/LayoutPadrao">
+
+<head>
+
+    <title>Cadastro de Pesagem</title>
+
+    <link rel="stylesheet" th:href="@{/stylesheets/vendors/easy-autocomplete.min.css}" />
+    <link rel="stylesheet" th:href="@{/stylesheets/vendors/easy-autocomplete.themes.min.css}" />
+
+</head>
+
+<body>
+
+    <div layout:fragment="conteudo">
+
+        <th:block th:include="/layout/fragments/MensagemSucesso"></th:block>
+
+        <!-- Page Heading -->
+        <div class="col-sm-12 text-center mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Pesagem de Produto</h1>
+        </div>
+
+        <form th:object="${itemPesagem}" th:action="@{/pesagens/produtos/novo}" method="post">
+
+            <div class="col-sm-10 offset-sm-1 formItemPesagem">
+                <div class="row">
+                    <div class="col-sm-4 form-group" th:object="${itemPesagem}">
+                        <label class="control-label font-weight-bold">Produto</label>
+                        <input type="text" class="form-control js-nomeDoProduto" th:field="*{produto}"
+                            placeholder="Digite o nome do produto" />
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label class="control-label font-weight-bold">Peso</label>
+                        <input type="text" class="form-control" th:field="*{pesoBruto}" placeholder="Informe o peso" />
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label class="control-label font-weight-bold">Tara</label>
+                        <input type="text" class="form-control" placeholder="Informe a tara" th:field="*{pesoTara}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center mb-2">
+                <button type="submit" class="btn btn-primary" name="acao" th:value="itens">
+                    <i class="fa fa-arrow-down"></i> Adicionar
+                </button>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1">
+                    <h6 class="m-2 font-weight-bold text-primary">Dados da Pesagem</h6>
+                </div>
+            </div>
+
+            <div th:include="pesagem/TabelaItensProdutos"></div>
+
+                <div class="col-sm-12 text-center mt-3">
+                    <button type="submit" class="btn btn-success btn-sm" name="acao" th:value="salvar">
+                        <i class="fa fa-check"></i> Salvar
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal"
+                        data-whatever="@mdo">
+                        <i class="fa fa-random"></i> Transformar
+                    </button>
+                    <button type="submit" class="btn btn-secondary btn-sm">
+                        <i class="fa fa-undo"></i> Cancelar
+                    </button>
+                </div>
+
+                <!-- Modal de Transformação de Material -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Transformação de
+                                    Material
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                            <label class="control-label font-weight-bold text-primary">Produto
+                                                principal</label>
+                                            <input type="text" class="form-control" value="Lingote" />
+                                        </div>
+                                        <div class="col-sm-3 form-group">
+                                            <label class="control-label font-weight-bold text-primary">Peso
+                                                Líquido</label>
+                                            <input type="text" class="form-control" value="255.00" />
+                                        </div>
+                                        <div class="col-sm-3 form-group">
+                                            <label class="control-label font-weight-bold text-primary">Perda</label>
+                                            <input type="text" class="form-control" value="6 %" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                            <label class="control-label font-weight-bold text-success">Transferir
+                                                produto para</label>
+                                            <input type="text" class="form-control" value="Sucata" />
+                                        </div>
+                                        <div class="col-sm-3 form-group">
+                                            <label class="control-label font-weight-bold text-success">Perda</label>
+                                            <input type="text" class="form-control" value="15 %" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                            <label class="control-label font-weight-bold text-dark">Total</label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btn-sm"
+                                    data-dismiss="modal">Salvar</button>
+                                <button type="button" class="btn btn-secondary btn-sm"
+                                    data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fim do Modal de Transformação de Material -->
+
+        </form>
+
+    </div>
+
+    <th:block layout:fragment="javascript-extra">
+        <script th:src="@{/javascripts/vendors/jquery.easy-autocomplete.min.js}"></script>
+        <script th:src="@{/javascripts/produto.autocomplete.js}"></script>
+        <script th:src="@{/javascripts/produto-tabela-itens.js}"></script>
+    </th:block>
+
+</body>
+
+</html>

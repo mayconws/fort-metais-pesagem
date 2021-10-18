@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:data="http://www.thymeleaf.org/extras/data">
+
+<div class="col-sm-10 offset-sm-1" id="tabelaItensProdutos">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <table class="card-body">
+            <div class="row no-gutters">
+                <thead>
+                    <tr>                       
+                        <th class="text-center text-lg text-primary">Produto</th>
+                        <th class="text-center text-lg text-primary">Peso</th>
+                        <th class="text-center text-lg text-primary">Tara</th>
+                        <th class="text-center text-lg text-primary">Peso Líquido</th>
+                        <th class="text-center text-lg text-primary"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="itemPesagem : ${listaItensPesagens}">                       
+                        <td class="text-center font-weight-bold" th:text="${itemPesagem.produto.nome}"></td>
+                        <td class="text-center font-weight-bold" th:text="${itemPesagem.pesoBruto}"></td>
+                        <td class="text-center font-weight-bold" th:text="${itemPesagem.pesoTara}"></td>
+                        <td class="text-center font-weight-bold" th:text="${itemPesagem.getPesoLiquidoTotal}"></td>
+                        <td class="text-center font-weight-bold">
+                            <i class="fa fa-cog fa-2x text-gray-300 text-success"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </div>
+        </table>
+    </div>
+</div>
+
+<div class="col-sm-10 offset-sm-1 mt-2">
+    <div class="card border-bottom-success h-100">
+        <div class="card-body">
+            <div class="col-sm-1">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                <div class="h5 mb-0 font-weight-bold text-success"></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</html>

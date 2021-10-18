@@ -6,6 +6,7 @@ import com.fortmetais.pesagem.dto.ProdutoDTO;
 
 public interface ProdutosQueries {
 	
-	public List<ProdutoDTO> buscarPorNomeOuCodigo(String nomeOuCodigo);
+	public List<ProdutoDTO> produtoPorNome(String nomeProduto);	
+		
 
 }

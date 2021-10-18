@@ -6,6 +6,6 @@ import com.fortmetais.pesagem.dto.ClienteDTO;
 
 public interface ClientesQueries {
 	
-	public List<ClienteDTO> buscarPorNomeOuCnpj(String nomeOuCnpj);
+	public List<ClienteDTO> porNomeOuCnpj(String nomeOuCnpj);	
 
 }

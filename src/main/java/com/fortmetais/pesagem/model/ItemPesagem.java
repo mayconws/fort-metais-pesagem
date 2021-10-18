@@ -102,6 +102,10 @@ public class ItemPesagem implements Serializable {
 	public void setVolumesPesagem(List<VolumePesagem> volumesPesagem) {
 		this.volumesPesagem = volumesPesagem;
 	}
+	
+	public BigDecimal getPesoLiquidoTotal() {
+		return pesoBruto.subtract(pesoTara);
+	}
 
 	@Override
 	public int hashCode() {

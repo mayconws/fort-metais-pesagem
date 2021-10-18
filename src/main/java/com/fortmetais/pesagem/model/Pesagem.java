@@ -2,8 +2,8 @@ package com.fortmetais.pesagem.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,11 +20,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Type;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "pesagem")
@@ -36,10 +33,8 @@ public class Pesagem implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "data_lancamento")
-	private Date dataLancamento;
+	private LocalDate dataLancamento;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo_pesagem")
@@ -48,6 +43,9 @@ public class Pesagem implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
+	
+	@Column(name = "transportadora")
+	private String transportadora;
 	
 	@Lob
 	@Type(type = "org.hibernate.type.TextType")
@@ -72,13 +70,13 @@ public class Pesagem implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
+	}	
 
-	public Date getDataLancamento() {
+	public LocalDate getDataLancamento() {
 		return dataLancamento;
 	}
 
-	public void setDataLancamento(Date dataLancamento) {
+	public void setDataLancamento(LocalDate dataLancamento) {
 		this.dataLancamento = dataLancamento;
 	}
 
@@ -136,6 +134,14 @@ public class Pesagem implements Serializable {
 
 	public void setItensPesagem(List<ItemPesagem> itensPesagem) {
 		this.itensPesagem = itensPesagem;
+	}
+
+	public String getTransportadora() {
+		return transportadora;
+	}
+
+	public void setTransportadora(String transportadora) {
+		this.transportadora = transportadora;
 	}
 
 	@Override

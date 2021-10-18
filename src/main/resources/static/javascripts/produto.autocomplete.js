@@ -1,7 +1,7 @@
 var options = {
 
-	url: function(nomeOuCnpj) {
-		return "/clientes/?nomeOuCnpj=" + nomeOuCnpj;
+	url: function(nomeProduto) {
+		return "/produtos/?nomeProduto=" + nomeProduto;
 	},
 
 	getValue: "nome",
@@ -12,4 +12,4 @@ var options = {
 	}
 };
 
-$(".js-nomeOuCnpjInput").easyAutocomplete(options);
+$(".js-nomeDoProduto").easyAutocomplete(options);

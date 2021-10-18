@@ -9,8 +9,8 @@
 
     <title>Cadastro de Pesagem</title>
 
-    <!-- Switch Button -->
-    <link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap4-toggle.min.css}" />
+    <link rel="stylesheet" th:href="@{/stylesheets/vendors/easy-autocomplete.min.css}"/>
+	<link rel="stylesheet" th:href="@{/stylesheets/vendors/easy-autocomplete.themes.min.css}"/>
 
 </head>
 
@@ -25,28 +25,27 @@
             <h1 class="h3 mb-0 text-gray-800">Cadastro de Pesagem</h1>
         </div>
 
-        <form method="post">
+        <form th:object="${pesagem}" th:action="@{/pesagens/nova}" method="post">
 
             <div class="row">
                 <div class="col-sm-4 form-group">
                     <label class="control-label font-weight-bold">Cliente</label>
-                    <input type="text" class="form-control" placeholder="Digite o nome do cliente" />
+                    <input class="form-control js-nomeOuCnpjInput" th:field="*{cliente}">	
                 </div>
                 <div class="col-sm-4 form-group">
                     <label class="control-label font-weight-bold">Transportadora</label>
-                    <input type="text" class="form-control" placeholder="Informe o nome da transportadora" />
+                    <input type="text" class="form-control js-nomeOuCnpjInput" 
+                    	placeholder="Informe o nome da transportadora" th:field="*{transportadora}"/>
                 </div>
                 <div class="col-sm-2 form-group">
                     <label class="control-label font-weight-bold">Data</label>
-                    <input type="date" class="form-control" />
+                    <input type="date" class="form-control" th:field="*{dataLancamento}"/>
                 </div>
                 <div class="col-sm-2 form-group">
                     <label class="control-label font-weight-bold">Tipo</label>
-                    <select class="form-control">
+                    <select class="form-control" th:field="*{tipoPesagem}">
                         <option value="">Selecione...</option>
-                        <option value="">Entrada</option>
-                        <option value="">Saída</option>
-                        <option value="">Devolução</option>
+                        <option th:each="tipoPesagem : ${tipos}" th:value="${tipoPesagem}" th:text="${tipoPesagem.descricao}"></option>
                     </select>
                 </div>
             </div>
@@ -54,11 +53,11 @@
             <div class="row">
                 <div class="col-sm-12 form-group">
                     <label class="control-label font-weight-bold">Observação</label>
-                    <textarea type="text" class="form-control" placeholder="Infome a observação"></textarea>
+                    <textarea class="form-control" placeholder="Infome a observação" th:field="*{observacao}"></textarea>
                 </div>
             </div>
 
-            <div class="col-sm-12 text-center mb-3">            	
+            <div class="col-sm-12 text-center mb-3">           	
                 <a type="button" class="btn btn-primary btn-sm text-white" th:href="@{/pesagens/produtos/novo}" >
                     <i class="fa fa-spinner"></i> Pesar
                 </a>
@@ -90,16 +89,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="text-center">01 Sucata</td>
-                                    <td class="text-center">Padrão</td>
-                                    <td class="text-center">282,00</td>
-                                    <td class="text-center">20 %</td>
-                                    <td class="text-center">239,70</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
                                     <td class="text-center">
-                                        <a type="button" class="btn btn-primary btn-circle btn-sm text-white"
-                                            title="excluir">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+                                       
                                     </td>
                                 </tr>
                             </tbody>
@@ -114,7 +110,8 @@
     </div>
 
     <th:block layout:fragment="javascript-extra">
-
+		<script th:src="@{/javascripts/vendors/jquery.easy-autocomplete.min.js}"></script>
+		<script th:src="@{/javascripts/cliente.autocomplete.js}"></script>
     </th:block>
 
 </body>
