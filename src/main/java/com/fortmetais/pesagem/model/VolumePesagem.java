@@ -22,6 +22,8 @@ public class VolumePesagem implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private String produtoTemporario;
+	
 	@Column(name = "peso_bruto")
 	private BigDecimal pesoBruto;
 	
@@ -73,6 +75,18 @@ public class VolumePesagem implements Serializable {
 
 	public void setItemPesagem(ItemPesagem itemPesagem) {
 		this.itemPesagem = itemPesagem;
+	}
+	
+	public String getProdutoTemporario() {
+		return produtoTemporario;
+	}
+
+	public void setProdutoTemporario(String produtoTemporario) {
+		this.produtoTemporario = produtoTemporario;
+	}
+
+	public BigDecimal getPesoLiquidoTotal() {
+		return pesoBruto.subtract(pesoTara);
 	}
 
 	@Override

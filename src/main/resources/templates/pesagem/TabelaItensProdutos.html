@@ -18,11 +18,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="itemPesagem : ${listaItensPesagens}">                       
-                        <td class="text-center font-weight-bold" th:text="${itemPesagem.produto.nome}"></td>
-                        <td class="text-center font-weight-bold" th:text="${itemPesagem.pesoBruto}"></td>
-                        <td class="text-center font-weight-bold" th:text="${itemPesagem.pesoTara}"></td>
-                        <td class="text-center font-weight-bold" th:text="${itemPesagem.getPesoLiquidoTotal}"></td>
+                    <tr th:each="conteudo : ${listaVolumes}">                       
+                      	<td class="text-center font-weight-bold" th:text="${conteudo.produtoTemporario}"></td>
+                        <td class="text-center font-weight-bold" th:text="${conteudo.pesoBruto}"></td>
+                        <td class="text-center font-weight-bold" th:text="${conteudo.pesoTara}"></td>
+                        <td class="text-center font-weight-bold" th:text="${conteudo.getPesoLiquidoTotal}"></td>
                         <td class="text-center font-weight-bold">
                             <i class="fa fa-cog fa-2x text-gray-300 text-success"></i>
                         </td>
