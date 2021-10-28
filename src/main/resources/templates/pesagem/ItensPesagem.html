@@ -29,18 +29,27 @@
 
             <div class="col-sm-10 offset-sm-1 formItemPesagem">
                 <div class="row">
-                    <div class="col-sm-4 form-group">
+                    <div class="col-sm-5 form-group">
                         <label class="control-label font-weight-bold">Produto</label>
                         <input type="text" class="form-control js-nomeDoProduto" th:field="*{produtoTemporario}"
                             placeholder="Digite o nome do produto" />
                     </div>
-                    <div class="col-sm-4 form-group">
+                    <div class="col-sm-3 form-group">
                         <label class="control-label font-weight-bold">Peso</label>
-                        <input type="text" class="form-control" th:field="*{pesoBruto}" placeholder="Informe o peso" />
+                        <input type="text" class="form-control" th:field="*{pesoBruto}" 
+                        	data-mask-reverse="true" placeholder="Informe o peso" />                        	
                     </div>
-                    <div class="col-sm-4 form-group">
+
+					<div class="col-sm-1 form-group" style="margin-top: 36px">
+						<button type="submit" class="btn btn-success btn-sm">
+							<i class="fa fa-arrows-alt"></i> Pesar
+						</button>
+					</div>
+
+					<div class="col-sm-3 form-group">
                         <label class="control-label font-weight-bold">Tara</label>
-                        <input type="text" class="form-control" placeholder="Informe a tara" th:field="*{pesoTara}" />
+                        <input type="text" class="form-control" placeholder="Informe a tara" 
+                        	data-mask-reverse="true" th:field="*{pesoTara}" />
                     </div>
                 </div>
             </div>

@@ -13,6 +13,7 @@ import com.fortmetais.pesagem.model.Pesagem;
 import com.fortmetais.pesagem.model.TipoPesagem;
 import com.fortmetais.pesagem.repository.Clientes;
 import com.fortmetais.pesagem.repository.Produtos;
+import com.fortmetais.pesagem.repository.VolumePesagens;
 import com.fortmetais.pesagem.service.PesagemService;
 
 @Controller
@@ -26,7 +27,10 @@ public class PesagemController {
 	private Produtos produtos;
 	
 	@Autowired
-	PesagemService pesagemService;	
+	private VolumePesagens volumes;
+	
+	@Autowired
+	PesagemService pesagemService;
 	
 	@RequestMapping("/nova")
 	public ModelAndView novo(Pesagem pesagem) {
@@ -34,6 +38,7 @@ public class PesagemController {
 		mv.addObject("clientes", clientes.findAll());
 		mv.addObject("produtos", produtos.findAll());
 		mv.addObject("tipos", TipoPesagem.values());
+		mv.addObject("volumes", volumes.findAll());
 		return mv;
 
 	}

@@ -88,6 +88,7 @@ public class VolumePesagem implements Serializable {
 	public BigDecimal getPesoLiquidoTotal() {
 		return pesoBruto.subtract(pesoTara);
 	}
+	
 
 	@Override
 	public int hashCode() {
