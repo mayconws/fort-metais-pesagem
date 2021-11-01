@@ -27,7 +27,7 @@ public class ItemPesagem implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne(cascade = {CascadeType.ALL})
+	@ManyToOne
 	@JoinColumn(name = "produto_id")
 	private Produto produto;
 	

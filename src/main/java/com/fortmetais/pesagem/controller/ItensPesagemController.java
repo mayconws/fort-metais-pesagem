@@ -15,7 +15,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fortmetais.pesagem.model.ItemPesagem;
 import com.fortmetais.pesagem.model.Pesagem;
-import com.fortmetais.pesagem.model.Produto;
 import com.fortmetais.pesagem.model.VolumePesagem;
 import com.fortmetais.pesagem.repository.Produtos;
 import com.fortmetais.pesagem.service.ItensPesagemService;
@@ -43,6 +42,7 @@ public class ItensPesagemController {
 		mv.addObject("conteudo", volumePesagem);
 		mv.addObject("produtos", produtos.findAll());
 		mv.addObject("listaVolumes", listaDeVolumes);
+		
 		return mv;
 
 	}
@@ -60,32 +60,32 @@ public class ItensPesagemController {
 			pesagemService.salvar(pesagem);
 
 			ItemPesagem itens = new ItemPesagem();
-			Produto produto = new Produto();
 
 			itens.setPesoBruto(BigDecimal.ZERO);
 			itens.setPesoTara(BigDecimal.ZERO);
 			itens.setPesoLiquido(BigDecimal.ZERO);
+			
 
-			for (VolumePesagem volumes : listaDeVolumes) {				
+			for (VolumePesagem volumes : listaDeVolumes) {	
 				
 				volumes.setItemPesagem(itens);
 				volumes.setPesoLiquido(volumes.getPesoLiquidoTotal());
-				itens.getVolumesPesagem().add(volumes);		
-				itens.setProduto(produto);
+				itens.getVolumesPesagem().add(volumes);	
 
 				itens.setPesoBruto(itens.getPesoBruto().add(volumes.getPesoBruto()));
 				itens.setPesoTara(itens.getPesoTara().add(volumes.getPesoTara()));
-				itens.setPesoLiquido(itens.getPesoLiquido().add(volumes.getPesoLiquido()));
-
-			}
-
+				itens.setPesoLiquido(itens.getPesoLiquido().add(volumes.getPesoLiquido()));	
+				
+				
+			}			
+			
 			listaDeVolumes = new ArrayList<>();
-			itensPesagemService.salvar(itens);
+			itensPesagemService.salvar(itens);			
 
 			return novo(new Pesagem(), new VolumePesagem());
 		}
 
-		System.err.println("Quantidade de Itens Adicionados > " + listaDeVolumes.size());
+		System.err.println("Quantidade de Itens Adicionados > " + listaDeVolumes.size());	
 
 		return novo(new Pesagem(), new VolumePesagem());
 	}

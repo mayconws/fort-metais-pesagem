@@ -88,15 +88,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr th:each="itemPesagem : ${itens}">
+                                    <td class="text-center" th:text="${itemPesagem.produto.nome}"></td>
                                     <td class="text-center"></td>
+                                    <td class="text-center" th:text="${itemPesagem.pesoBruto}"></td>
                                     <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center">
-                                       
-                                    </td>
+                                    <td class="text-center" th:text="${itemPesagem.pesoLiquido}"></td>
+                                    <td class="text-center">                                    	
+	                                    <a type="button" class="btn btn-primary btn-circle btn-sm text-white" title="excluir">
+	                                    	<i class="fas fa-trash"></i>
+										</a>
+									</td>
                                 </tr>
                             </tbody>
                         </table>

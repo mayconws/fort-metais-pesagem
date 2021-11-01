@@ -21,3 +21,27 @@ $(document).ready(function() {
 	$('.cpf').mask('000.000.000-00');
 	;
 });
+
+
+/* Mascara Valor Decimal */
+$(".valor").mask('#.##0,00', {
+  reverse: true
+});
+
+$('#vd_ga, #pvm_ga').on('blur', calculateValue);
+
+function calculateValue() {
+  var vd_ga = $('#vd_ga').val().replace(',', '.');
+  var pvm_ga = $('#pvm_ga').val();
+
+  $('#vm_ga').val(convertToCurrency(vd_ga * pvm_ga));
+  $('#eam_ga').val(convertToCurrency(vd_ga * pvm_ga));
+}
+
+function convertToCurrency(value) {
+  return value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2
+  })
+}
