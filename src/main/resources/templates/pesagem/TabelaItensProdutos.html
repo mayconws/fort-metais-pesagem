@@ -15,6 +15,7 @@
                         <th class="text-center text-lg text-primary">Tara</th>
                         <th class="text-center text-lg text-primary">Peso Líquido</th>
                         <th class="text-center text-lg text-primary"></th>
+                        <th class="text-center text-lg text-primary"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                         <td class="text-center font-weight-bold" th:text="|${{conteudo.pesoBruto}}|"></td>
                         <td class="text-center font-weight-bold" th:text="|${{conteudo.pesoTara}}|"></td>
                         <td class="text-center font-weight-bold" th:text="|${{conteudo.getPesoLiquidoTotal}}|"></td>
+                        <td class="text-center font-weight-bold" th:text="|${{conteudo.totalLiquido}}|"></td>
                         <td class="text-center font-weight-bold">
                             <i class="fa fa-cog fa-2x text-gray-300 text-success"></i>
                         </td>
@@ -30,14 +32,6 @@
                 </tbody>
             </div>
         </table>
-    </div>
-</div>
-
-<div class="col-sm-10 offset-sm-1 mt-2">
-    <div class="card border-left-success shadow h-100 py-2">
-    	<div class="card-body">
-    	
-    	</div>       
     </div>
 </div>
 

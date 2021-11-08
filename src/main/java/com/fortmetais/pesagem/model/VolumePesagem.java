@@ -33,6 +33,9 @@ public class VolumePesagem implements Serializable {
 	@Column(name = "peso_liquido")
 	private BigDecimal pesoLiquido;
 	
+	@Column(name = "total_liquido")
+	private BigDecimal totalLiquido;
+	
 	@ManyToOne
 	@JoinColumn(name = "item_pesagem_id")
 	private ItemPesagem itemPesagem;
@@ -87,6 +90,14 @@ public class VolumePesagem implements Serializable {
 
 	public BigDecimal getPesoLiquidoTotal() {
 		return pesoBruto.subtract(pesoTara);
+	}
+
+	public BigDecimal getTotalLiquido() {
+		return totalLiquido;
+	}
+
+	public void setTotalLiquido(BigDecimal totalLiquido) {
+		this.totalLiquido = totalLiquido;
 	}
 
 	@Override
