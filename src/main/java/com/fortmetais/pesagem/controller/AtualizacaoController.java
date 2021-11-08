@@ -8,7 +8,7 @@ import com.fortmetais.pesagem.service.AtualizacaoService;
 
 @Controller
 @RequestMapping("/atualizacao")
-public class AtualizacaoDadosController {
+public class AtualizacaoController {
 	@Autowired
 	private AtualizacaoService atualizacaoService;
 	
